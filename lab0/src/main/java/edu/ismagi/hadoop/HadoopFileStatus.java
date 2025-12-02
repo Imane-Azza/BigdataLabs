@@ -6,12 +6,21 @@ import org.apache.hadoop.fs.*;
 
 public class HadoopFileStatus {
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
+        if (args.length != 3) {
+            System.out.println("Usage: hadoop jar HadoopFileStatus.jar <path> <input_file> <output_file>");
+            System.out.println("Example: hadoop jar HadoopFileStatus.jar /user/root/input purchases.txt achats.txt");
+            System.exit(1);
+        }
+
+        String path = args[0];
+        String inputFile = args[1];
+        String outputFile = args[2];
+
         Configuration conf = new Configuration();
         FileSystem fs;
         try {
             fs = FileSystem.get(conf);
-            Path filepath = new Path("/user/root/input", "purchases.txt");
+            Path filepath = new Path(path, inputFile);
             FileStatus infos = fs.getFileStatus(filepath);
             if (!fs.exists(filepath)) {
                 System.out.println("File does not exists");
@@ -36,7 +45,7 @@ public class HadoopFileStatus {
                 }
                 System.out.println();
             }
-            fs.rename(filepath, new Path("/user/root/input", "achats.txt"));
+            fs.rename(filepath, new Path(path, outputFile));
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

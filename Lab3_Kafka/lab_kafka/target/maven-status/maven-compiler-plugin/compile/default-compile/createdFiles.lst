@@ -1,0 +1,4 @@
+edu\ismagi\kafka\WordCountApp.class
+edu\ismagi\kafka\Main.class
+edu\ismagi\kafka\EventProducer.class
+edu\ismagi\kafka\EventConsumer.class

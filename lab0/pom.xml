@@ -44,10 +44,10 @@
 <configuration>
 <archive>
 <manifest>
-<mainClass>edu.ensias.hadoop.Main</mainClass>
+<mainClass>edu.ismagi.hadoop.HadoopFileStatus</mainClass>
 </manifest>
 </archive>
-<finalName>hadoop-app</finalName>
+<finalName>HadoopFileStatus</finalName>
 </configuration>
 </plugin>
 </plugins>
